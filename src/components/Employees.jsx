@@ -52,7 +52,7 @@ export const Employees = () => {
 			})}>
 				<Form.Group className="mb-3">
 					<Form.Label>First Name</Form.Label>
-					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.' })} />
+					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.', minLength: {value: 2, message: 'First name must be at least 2 characters.'} })} />
 					<Form.Text className="text-muted app-text-danger">
 						<div>{errors.firstName?.message}</div>
 					</Form.Text>
