@@ -1,5 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/bootstrap.superhero.min.css';
+// import './styles/bootstrap.sketchy.min.css';
+import './styles/App.css'
 import { Container, Button } from 'react-bootstrap';
 
 function App() {

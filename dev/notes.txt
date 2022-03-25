@@ -1,8 +1,8 @@
 - x Vite
 - x minimize Vite
 
-- .. react-bootstrap
-- bootswatch themes
+- x react-bootstrap
+- .. bootswatch themes
 
 
 - employees
