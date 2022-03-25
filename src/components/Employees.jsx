@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
 	const [formData, setFormData] = useState({});
-	const [photoWidth, setPhotoWidth] = useState(100);
+	const [photoWidth, setPhotoWidth] = useState(500);
 	const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm({
 		defaultValues: {
 			department: 'Sales'
@@ -41,16 +41,16 @@ export const Employees = () => {
 
 	return (
 		<>
-			<div>Photo width is: {photoWidth}</div>
 			<div className="app-slider-area">
 				<input type="range" min="100" max="500" onChange={handleSliderChange} value={photoWidth}/>
 			</div>
 
-			<Carousel className="app-carousel">
-				{employees.map(employee => {
+			<Carousel style={{ 'width': `${photoWidth}px` }} className="app-carousel">
+				{employees.map((employee, index) => {
 					return (
-						<Carousel.Item>
+						<Carousel.Item key={index}>
 							<img
+								
 								className="d-block w-100"
 								src={`images/employees/employee_${employee.id}.jpg`}
 							/>

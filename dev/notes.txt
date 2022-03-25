@@ -27,6 +27,5 @@
 - x form with auto-complete
 - x show employee with id
 
-- .. slider
-	- .. create slider and show number as one slides
-	
+- x slider
+	- x create slider and show number as one slides
