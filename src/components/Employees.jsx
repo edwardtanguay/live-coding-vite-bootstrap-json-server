@@ -15,10 +15,10 @@ export const Employees = () => {
 		(async () => {
 			const response = await fetch('http://localhost:5000/employees');
 			const employees = await response.json();
+			setEmployees(employees);
 		})();
 	}, []);
 
-	console.log(errors);
 	return (
 		<>
 			<Carousel className="app-carousel">
@@ -34,6 +34,7 @@ export const Employees = () => {
 				</Carousel.Item>
 			</Carousel>
 
+			<div>There are {employees.length} employees with ids: {employees.map(m => m.id).join(', ')}</div>
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
 				setFormData(data);
 			})}>
