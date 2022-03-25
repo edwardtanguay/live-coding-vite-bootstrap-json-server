@@ -8,8 +8,8 @@
 - x form
 	- First Name
 - x build in react-hook-form basics
-- .. show data sent from form
-- first name required
+- x show data sent from form
+- .. first name required
 - first name must be at least 2 character
 - show data on submit
 - show errors

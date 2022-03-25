@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
 	const [formData, setFormData] = useState({});
-	const { register, handleSubmit } = useForm();
+	const { register, handleSubmit, formState: { errors } } = useForm();
+
+	console.log(errors);
 	return (
 		<>
 			<Carousel className="app-carousel">
@@ -50,7 +52,10 @@ export const Employees = () => {
 			})}>
 				<Form.Group className="mb-3">
 					<Form.Label>First Name</Form.Label>
-					<input className="app-input" type="text" {...register("firstName", { required: 'Please enter a first name.' })} />
+					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.' })} />
+					<Form.Text className="text-muted app-text-danger">
+						<div>{errors.firstName?.message}</div>
+					</Form.Text>
 					<Form.Text className="text-muted">
 						You can type in an id (<code>/id/</code>) for auto-complete.
 					</Form.Text>
