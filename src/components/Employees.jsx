@@ -4,7 +4,11 @@ import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
 	const [formData, setFormData] = useState({});
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, formState: { errors } } = useForm({
+		defaultValues: {
+			department: 'Sales'
+		}
+	});
 
 	console.log(errors);
 	return (
@@ -58,6 +62,22 @@ export const Employees = () => {
 					</Form.Text>
 					<Form.Text className="text-muted">
 						You can type in an id (<code>/id/</code>) for auto-complete.
+					</Form.Text>
+				</Form.Group>
+
+				<Form.Group className="mb-3">
+					<Form.Label>Last Name</Form.Label>
+					<input className="app-input" type="text" {...register("lastName", { required: 'Last name is required.', minLength: {value: 2, message: 'Last name must be at least 2 characters.'} })} />
+					<Form.Text className="text-muted app-text-danger">
+						<div>{errors.lastName?.message}</div>
+					</Form.Text>
+				</Form.Group>
+
+				<Form.Group className="mb-3">
+					<Form.Label>Department</Form.Label>
+					<input className="app-input" type="text" {...register("department", { required: 'Department is required.' })} />
+					<Form.Text className="text-muted app-text-danger">
+						<div>{errors.department?.message}</div>
 					</Form.Text>
 				</Form.Group>
 

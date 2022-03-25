@@ -14,15 +14,11 @@
 - x show data on submit
 - x show errors
 - x disable button on errors
+- x other fields
+	- x Last Name
+	- x Department
+- .. default values on department
 
-	
-
-
-- other fields
-	- Last Name
-	- Department
-
-- react-hook-form interactivity
 
 - employees
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
