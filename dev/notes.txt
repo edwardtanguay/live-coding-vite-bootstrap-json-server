@@ -1,0 +1,14 @@
+- x Vite
+- .. minimize Vite
+
+
+
+
+- react-bootstrap
+- bootswatch themes
+- employees
+	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
+- json-server via API
+- carousel of employee pics
+- form with auto-complete
+- slider?
