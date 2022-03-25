@@ -38,19 +38,21 @@ export const Employees = () => {
 	const handleSliderChange = (e) => {
 		setPhotoWidth(e.target.value)
 	}
-
+	const handleSelect = (data) => {
+		console.log(data);
+	}
 	return (
 		<>
 			<div className="app-slider-area">
-				<input type="range" min="100" max="500" onChange={handleSliderChange} value={photoWidth}/>
+				<input type="range" min="100" max="500" onChange={handleSliderChange} value={photoWidth} />
 			</div>
 
-			<Carousel style={{ 'width': `${photoWidth}px` }} className="app-carousel">
+			<Carousel style={{ 'width': `${photoWidth}px` }} className="app-carousel" onSelect={handleSelect}>
 				{employees.map((employee, index) => {
 					return (
 						<Carousel.Item key={index}>
 							<img
-								
+
 								className="d-block w-100"
 								src={`images/employees/employee_${employee.id}.jpg`}
 							/>
