@@ -7,12 +7,13 @@
 - x carousel, dummy pics
 - x form
 	- First Name
-- .. build in react-hook-form basics
-	- first name required
-	- first name must be at least 2 character
-	- show data on submit
-	- show errors
-	- disable button on errors
+- x build in react-hook-form basics
+- .. show data sent from form
+- first name required
+- first name must be at least 2 character
+- show data on submit
+- show errors
+- disable button on errors
 
 	
 

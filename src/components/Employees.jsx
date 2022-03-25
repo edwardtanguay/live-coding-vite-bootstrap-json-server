@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Carousel, Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
+	const [formData, setFormData] = useState({});
 	const { register, handleSubmit } = useForm();
 	return (
 		<>
@@ -44,19 +46,22 @@ export const Employees = () => {
 			</Carousel>
 
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
-				console.log(data);
+				setFormData(data);
 			})}>
 				<Form.Group className="mb-3">
 					<Form.Label>First Name</Form.Label>
-					<input className="app-input" type="text" {...register("firstName", { required: 'Please enter a first name.'})}/> 
+					<input className="app-input" type="text" {...register("firstName", { required: 'Please enter a first name.' })} />
 					<Form.Text className="text-muted">
-					You can type in an id (<code>/id/</code>) for auto-complete.
+						You can type in an id (<code>/id/</code>) for auto-complete.
 					</Form.Text>
 				</Form.Group>
 
 				<Button variant="primary" type="submit">
 					Submit
 				</Button>
+				{Object.keys(formData).length > 0 && (
+					<div className="formData"><pre>{JSON.stringify(formData, null, 2)}</pre></div>
+				)}
 			</Form>
 		</>
 	)
