@@ -21,9 +21,16 @@ export const Employees = () => {
 
 	useEffect(() => {
 		const firstName = watch('firstName');
-		if (firstName === '/4/') {
-			setValue('firstName', 'Jim');
-			setValue('lastName', 'Smith');
+		if (firstName.startsWith('/') && firstName.endsWith('/')) {
+			const rest = firstName.replaceAll('/', '');
+			const id = Number(rest);
+			if (!isNaN(id) && id !== 0) {
+				const employee = employees.find(m => m.id === id);
+				if (employee !== undefined) {
+					setValue('firstName', employee.firstName);
+					setValue('lastName', employee.lastName);
+				}
+			}
 		}
 	}, [watch('firstName')]);
 
