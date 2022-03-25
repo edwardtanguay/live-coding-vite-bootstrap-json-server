@@ -4,8 +4,11 @@
 - x react-bootstrap
 - x bootswatch themes
 - x create component: Employees.jsx
-- .. carousel, dummy pics
-	- form
+- x carousel, dummy pics
+- .. form
+	- First Name
+	- Last Name
+	- Department
 
 - react-hook-form interactivity
 
