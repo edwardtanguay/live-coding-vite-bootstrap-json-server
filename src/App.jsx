@@ -10,9 +10,7 @@ function App() {
 		<div className="App">
 			<Container>
 				<h1>Employee Site</h1>
-				<Button className="btn-success">Show Info</Button>
-				<Button variant="danger">Delete</Button>
-				<Employees/>
+				<Employees />
 			</Container>
 		</div>
 	)

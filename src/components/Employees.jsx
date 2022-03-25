@@ -3,7 +3,6 @@ import { Carousel } from 'react-bootstrap';
 export const Employees = () => {
 	return (
 		<>
-			<h2>Employees</h2>
 			<Carousel className="app-carousel">
 				<Carousel.Item>
 					<img
