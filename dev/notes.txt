@@ -1,11 +1,10 @@
 - x Vite
-- .. minimize Vite
+- x minimize Vite
 
-
-
-
-- react-bootstrap
+- .. react-bootstrap
 - bootswatch themes
+
+
 - employees
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
 - json-server via API
