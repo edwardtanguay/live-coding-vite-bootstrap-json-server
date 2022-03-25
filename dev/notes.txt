@@ -21,9 +21,8 @@
 
 - x employees as json file: /src/data/data.json
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
-- .. set up json-server via API
-
-- carousel of employee pics
+- x set up json-server via API
+- .. carousel of employee pics
 - form with auto-complete
 
 - slider?
