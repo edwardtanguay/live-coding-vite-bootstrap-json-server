@@ -2,8 +2,12 @@
 - x minimize Vite
 
 - x react-bootstrap
-- .. bootswatch themes
+- x bootswatch themes
+- .. create component: Employees.jsx
+	- .. carousel, dummy pics
+	- form
 
+- react-hook-form interactivity
 
 - employees
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
