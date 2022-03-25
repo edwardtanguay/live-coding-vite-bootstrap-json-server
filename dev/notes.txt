@@ -17,12 +17,13 @@
 - x other fields
 	- x Last Name
 	- x Department
-- .. default values on department
+- x default values on department
 
-
-- employees
+- x employees as json file: /src/data/data.json
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
-- json-server via API
+- .. set up json-server via API
+
 - carousel of employee pics
 - form with auto-complete
+
 - slider?
