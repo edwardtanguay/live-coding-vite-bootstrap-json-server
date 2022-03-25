@@ -5,8 +5,19 @@
 - x bootswatch themes
 - x create component: Employees.jsx
 - x carousel, dummy pics
-- .. form
+- x form
 	- First Name
+- .. build in react-hook-form basics
+	- first name required
+	- first name must be at least 2 character
+	- show data on submit
+	- show errors
+	- disable button on errors
+
+	
+
+
+- other fields
 	- Last Name
 	- Department
 

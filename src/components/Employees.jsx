@@ -1,6 +1,8 @@
 import { Carousel, Form, Button } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
+	const { register, handleSubmit } = useForm();
 	return (
 		<>
 			<Carousel className="app-carousel">
@@ -41,10 +43,12 @@ export const Employees = () => {
 				</Carousel.Item>
 			</Carousel>
 
-			<Form className="mt-4">
+			<Form className="mt-4" onSubmit={handleSubmit((data) => {
+				console.log(data);
+			})}>
 				<Form.Group className="mb-3">
 					<Form.Label>First Name</Form.Label>
-					<Form.Control type="text"  />
+					<input className="app-input" type="text" {...register("firstName", { required: 'Please enter a first name.'})}/> 
 					<Form.Text className="text-muted">
 					You can type in an id (<code>/id/</code>) for auto-complete.
 					</Form.Text>
