@@ -23,7 +23,8 @@
 	- https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/json/employees.json
 - x set up json-server via API
 - x carousel of employee pics
-- .. dummy autocomplete: '/4/' --> Jim Smith
-- form with auto-complete
+- x dummy autocomplete: '/4/' --> Jim Smith
+- x form with auto-complete
+- .. show employee with id
 
 - slider?

@@ -36,7 +36,7 @@ export const Employees = () => {
 
 	return (
 		<>
-			{/* <Carousel className="app-carousel">
+			<Carousel className="app-carousel">
 				{employees.map(employee => {
 					return (
 						<Carousel.Item>
@@ -45,12 +45,12 @@ export const Employees = () => {
 								src={`images/employees/employee_${employee.id}.jpg`}
 							/>
 							<Carousel.Caption>
-								<h3>{employee.firstName} {employee.lastName}</h3>
+								<h3>{employee.firstName} {employee.lastName} ({employee.id})</h3>
 							</Carousel.Caption>
 						</Carousel.Item>
 					)
 				})}
-			</Carousel> */}
+			</Carousel>
 
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
 				setFormData(data);
