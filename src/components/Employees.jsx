@@ -41,13 +41,16 @@ export const Employees = () => {
 	const handleCarouselChange = (data) => {
 		console.log(data);
 	}
+	const showCarouselText = () => {
+		return photoWidth > 350;
+	}
 	return (
 		<>
 			<div className="app-slider-area">
 				<input type="range" min="100" max="400" onChange={handleSliderChange} value={photoWidth} />
 			</div>
 
-			<Carousel style={{ 'width': `${photoWidth}px` }} onSelect={handleCarouselChange}>
+			<Carousel style={{ 'width': `${photoWidth}px` }} onSelect={handleCarouselChange} controls={showCarouselText()} indicators={showCarouselText()}>
 				{employees.map((employee, index) => {
 					return (
 						<Carousel.Item key={index}>
@@ -56,9 +59,11 @@ export const Employees = () => {
 								className="d-block w-100"
 								src={`images/employees/employee_${employee.id}.jpg`}
 							/>
-							<Carousel.Caption>
-								<h3>{employee.firstName} {employee.lastName} ({employee.id})</h3>
-							</Carousel.Caption>
+							{showCarouselText() && (
+								<Carousel.Caption>
+									<h3>{employee.firstName} {employee.lastName} ({employee.id})</h3>
+								</Carousel.Caption>
+							)}
 						</Carousel.Item>
 					)
 				})}
@@ -67,18 +72,18 @@ export const Employees = () => {
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
 				setFormData(data);
 			})}>
-				<Form.Group className="mb-3">
+				<Form.Group className="mb-3 app-form-group">
 					<Form.Label>First Name</Form.Label>
 					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.', minLength: { value: 2, message: 'First name must be at least 2 characters.' } })} />
 					<Form.Text className="text-muted app-text-danger">
 						<div>{errors.firstName?.message}</div>
 					</Form.Text>
 					<Form.Text className="text-muted">
-						You can type in an id (<code>/id/</code>) for auto-complete.
+						You can type in an id (<code>/id/</code>) for auto-complete, e.g. <code>/5/</code>.
 					</Form.Text>
 				</Form.Group>
 
-				<Form.Group className="mb-3">
+				<Form.Group className="mb-3 app-form-group">
 					<Form.Label>Last Name</Form.Label>
 					<input className="app-input" type="text" {...register("lastName", { required: 'Last name is required.', minLength: { value: 2, message: 'Last name must be at least 2 characters.' } })} />
 					<Form.Text className="text-muted app-text-danger">
@@ -86,7 +91,7 @@ export const Employees = () => {
 					</Form.Text>
 				</Form.Group>
 
-				<Form.Group className="mb-3">
+				<Form.Group className="mb-3 app-form-group">
 					<Form.Label>Department</Form.Label>
 					<input className="app-input" type="text" {...register("department", { required: 'Department is required.' })} />
 					<Form.Text className="text-muted app-text-danger">
