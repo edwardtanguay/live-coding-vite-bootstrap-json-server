@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Carousel, Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 
@@ -9,6 +9,14 @@ export const Employees = () => {
 			department: 'Sales'
 		}
 	});
+	const [employees, setEmployees] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			const response = await fetch('http://localhost:5000/employees');
+			const employees = await response.json();
+		})();
+	}, []);
 
 	console.log(errors);
 	return (
@@ -17,36 +25,11 @@ export const Employees = () => {
 				<Carousel.Item>
 					<img
 						className="d-block w-100"
-						src="images/slide1.png"
+						src="images/employees/employee_1.jpg"
 						alt="First slide"
 					/>
 					<Carousel.Caption>
-						<h3>First slide label</h3>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100"
-						src="images/slide2.png"
-						alt="Second slide"
-					/>
-
-					<Carousel.Caption>
-						<h3>Second slide label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100"
-						src="images/slide3.png"
-						alt="Third slide"
-					/>
-
-					<Carousel.Caption>
-						<h3>Third slide label</h3>
-						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+						<h3>nnn</h3>
 					</Carousel.Caption>
 				</Carousel.Item>
 			</Carousel>
@@ -56,7 +39,7 @@ export const Employees = () => {
 			})}>
 				<Form.Group className="mb-3">
 					<Form.Label>First Name</Form.Label>
-					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.', minLength: {value: 2, message: 'First name must be at least 2 characters.'} })} />
+					<input className="app-input" type="text" {...register("firstName", { required: 'First name is required.', minLength: { value: 2, message: 'First name must be at least 2 characters.' } })} />
 					<Form.Text className="text-muted app-text-danger">
 						<div>{errors.firstName?.message}</div>
 					</Form.Text>
@@ -67,7 +50,7 @@ export const Employees = () => {
 
 				<Form.Group className="mb-3">
 					<Form.Label>Last Name</Form.Label>
-					<input className="app-input" type="text" {...register("lastName", { required: 'Last name is required.', minLength: {value: 2, message: 'Last name must be at least 2 characters.'} })} />
+					<input className="app-input" type="text" {...register("lastName", { required: 'Last name is required.', minLength: { value: 2, message: 'Last name must be at least 2 characters.' } })} />
 					<Form.Text className="text-muted app-text-danger">
 						<div>{errors.lastName?.message}</div>
 					</Form.Text>
