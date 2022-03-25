@@ -36,6 +36,10 @@ export const Employees = () => {
 
 	return (
 		<>
+			<div className="app-slider-area">
+				<input type="range" min="100" max="500"/>
+			</div>
+
 			<Carousel className="app-carousel">
 				{employees.map(employee => {
 					return (

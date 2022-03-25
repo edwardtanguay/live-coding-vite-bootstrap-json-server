@@ -25,6 +25,8 @@
 - x carousel of employee pics
 - x dummy autocomplete: '/4/' --> Jim Smith
 - x form with auto-complete
-- .. show employee with id
+- x show employee with id
 
-- slider?
+- .. slider
+	- .. create slider and show number as one slides
+	

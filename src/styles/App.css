@@ -1,5 +1,5 @@
 .app-carousel {
-	max-width: 400px;
+	max-width: 200px;
 }
 
 .app-input {
@@ -16,4 +16,8 @@
 
 .app-text-danger {
 	color: red !important;
+}
+
+.app-slider-area {
+	margin: 30px 0 10px 0;
 }
