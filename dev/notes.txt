@@ -3,8 +3,8 @@
 
 - x react-bootstrap
 - x bootswatch themes
-- .. create component: Employees.jsx
-	- .. carousel, dummy pics
+- x create component: Employees.jsx
+- .. carousel, dummy pics
 	- form
 
 - react-hook-form interactivity
