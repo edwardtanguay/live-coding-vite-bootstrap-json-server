@@ -22,19 +22,22 @@ export const Employees = () => {
 	return (
 		<>
 			<Carousel className="app-carousel">
-				<Carousel.Item>
-					<img
-						className="d-block w-100"
-						src="images/employees/employee_1.jpg"
-						alt="First slide"
-					/>
-					<Carousel.Caption>
-						<h3>nnn</h3>
-					</Carousel.Caption>
-				</Carousel.Item>
+				{employees.map(employee => {
+					return (
+
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src={`images/employees/employee_${employee.id}.jpg`}
+							/>
+							<Carousel.Caption>
+								<h3>{employee.firstName} {employee.lastName}</h3>
+							</Carousel.Caption>
+						</Carousel.Item>
+					)
+				})}
 			</Carousel>
 
-			<div>There are {employees.length} employees with ids: {employees.map(m => m.id).join(', ')}</div>
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
 				setFormData(data);
 			})}>
