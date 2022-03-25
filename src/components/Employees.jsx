@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 
 export const Employees = () => {
 	const [formData, setFormData] = useState({});
-	const { register, handleSubmit, formState: { errors } } = useForm({
+	const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm({
 		defaultValues: {
 			department: 'Sales'
 		}
@@ -19,12 +19,19 @@ export const Employees = () => {
 		})();
 	}, []);
 
+	useEffect(() => {
+		const firstName = watch('firstName');
+		if (firstName === '/4/') {
+			setValue('firstName', 'Jim');
+			setValue('lastName', 'Smith');
+		}
+	}, [watch('firstName')]);
+
 	return (
 		<>
-			<Carousel className="app-carousel">
+			{/* <Carousel className="app-carousel">
 				{employees.map(employee => {
 					return (
-
 						<Carousel.Item>
 							<img
 								className="d-block w-100"
@@ -36,7 +43,7 @@ export const Employees = () => {
 						</Carousel.Item>
 					)
 				})}
-			</Carousel>
+			</Carousel> */}
 
 			<Form className="mt-4" onSubmit={handleSubmit((data) => {
 				setFormData(data);
